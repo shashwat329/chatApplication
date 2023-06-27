@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Ubuntu&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    body {
+        background-color: #101B21;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+
+    .box {
+        padding: 70px 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #051e25;
+        box-shadow: 2px 2px 20px 20px #0c1518;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: 10px;
+        color: white;
+    }
+
+    .name {
+        padding: 10px 20px;
+        font-size: 20px;
+        outline: 0;
+        margin: 10px 0;
+    }
+
+    #btn {
+        padding: 5px 20px;
+        font-size: 20px;
+        border-radius: 10px;
+        outline: 0;
+        border: 0;
+    }
+
+    input {
+        width: 300px;
+        border-radius: 15px;
+        outline: 0;
+        border: 0;
+        background-color: #FFFAD7;
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: black;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: black;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: black;
+    }
+
+    /* input:focus{
+        width: 900px;
+    } */
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Enter Your Name</h1>
+            <input type="text" name="name" class="name" id="user_name" placeholder="User Name">
+            <a href="chat.html" onclick="set()">
+                <button id="btn">Jump into the Conversation</button>
+            </a>
+        </div>
+    </div>
+</body>
+<script>
+    function capFirst(str) {
+        return str[0].toUpperCase() + str.slice(1);
+    }
+    function set() {
+        let name = document.getElementById('user_name').value;
+        sessionStorage.setItem('name', capFirst(name))
+    }
+</script>
+
+</html>
