@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname , './public')));
 // })
 
 io.on('connection', socket => {
-    console.log("User is connected");
+    // console.log("User is connected");
     socket.on('joined', name => {
         user[socket.id] = name;
         userName.push(name);
@@ -30,7 +30,7 @@ io.on('connection', socket => {
     })
     socket.on('disconnect', () => {
         socket.broadcast.emit('leave', user[socket.id]);
-        console.log("User is disconnected");
+        // console.log("User is disconnected");
         // delete user[socket.id];
         let index = userName.indexOf(user[socket.id])
         if (index > -1)
