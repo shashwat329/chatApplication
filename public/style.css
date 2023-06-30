@@ -11,21 +11,60 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     padding: 60px;
+    gap: 5px;
 }
 .container h1{
     color: white;
     letter-spacing: 2px;
     margin: 8px;
 }
+.profile{
+    height: 100%;
+    width: 20%;
+    background-color: #1C262A;
+    position: relative;
+    padding-top: 100px;
+    padding-left: 10px;
+}
+.P-user{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    margin-bottom: 25px;
+}
+.P-user p{
+    font-size: 20px;
+}
+.P-user span{
+    font-size: 20px;
+    color: gray;
+}
+.profile::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 105%;
+    height: 8%;
+    background-color: #222E35;
+}
 .contain{
     width: 60%;
     height: 100%;
 }
 
+.Pcircle{
+    width: 50px;
+    height: 50px;
+    background-color: #101B21;
+    border-radius: 30px;
+}
 .circle{
     width: 45px;
     height: 45px;
@@ -56,7 +95,7 @@
     letter-spacing: 1px;
 }
 .box{
-    height: 90%;
+    height: 85%;
     background-color: #1c262a;
     overflow-y: scroll;
     padding: 20px 15px;
@@ -116,6 +155,7 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 20px solid #181e22;
+    background-color: #181e22;
     position: absolute;
     top: 0px;
     left: -7px;
@@ -135,6 +175,7 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 20px solid #024134;
+    background-color: #024134;
     position: absolute;
     right: -7px;
     top: 0px;
@@ -191,6 +232,15 @@
 }
 
 @media (max-width:451px){
+    .container{
+        padding-top: 0px;
+    }
+    .profile{
+        display: none;
+    }
+    .box{
+        height: 90%;
+    }
     .message{
         max-width: 70vw;
     }
