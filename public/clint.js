@@ -1,8 +1,6 @@
 let users = [];
 let i = 0;
 const socket = io();
-// const name = "Ayush";
-// const name = prompt("Enter your name: ");
 name = sessionStorage.getItem("name")
 socket.emit('joined', name);
 
@@ -45,7 +43,7 @@ function addUser() {
 }
 
 socket.on('user-joined', name => {
-    join(`${name} join the chat.`);
+    join(`${name} joined the chat.`);
 })
 
 socket.on('userName', userName => {
@@ -61,7 +59,7 @@ socket.on('recieved', data => {
 })
 
 socket.on('leave', name => {
-    join(`${name} leave the chat.`);
+    join(`${name} left the chat.`);
 })
 
 messageInput.addEventListener("keydown", function (e) {
